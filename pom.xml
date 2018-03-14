@@ -6,7 +6,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <modules>
-    <module>sampdb-web</module>
+    <module>sampdbweb</module>
     <module>sampdb-service</module>
     <module>sampdb-modeljpa</module>
     <module>sampdb-shared</module>

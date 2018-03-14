@@ -9,9 +9,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   
-  <groupId>com.rafael</groupId>
   <artifactId>sampdb-shared</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <name>sampdb-shared</name>
   <url>http://maven.apache.org</url>
   

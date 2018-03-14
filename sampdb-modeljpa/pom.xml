@@ -9,9 +9,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   
-  <groupId>com.rafael</groupId>
   <artifactId>sampdb-modeljpa</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <name>sampdb-modeljpa</name>
   <url>http://maven.apache.org</url>
   
@@ -19,12 +17,104 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   
+    <dependencyManagement>
+       <dependencies>
+           <dependency>
+               <groupId>io.spring.platform</groupId>
+               <artifactId>platform-bom</artifactId>
+               <version>1.1.2.RELEASE</version>
+               <type>pom</type>
+               <scope>import</scope>
+           </dependency>
+       </dependencies>
+	</dependencyManagement>
+	 
   <dependencies>
 	<dependency>
 	    <groupId>junit</groupId>
 	    <artifactId>junit</artifactId>
-	    <version>4.12</version>
 	    <scope>test</scope>
 	</dependency>
+	
+	<!-- Database -->
+	<dependency>
+	    <groupId>mysql</groupId>
+	    <artifactId>mysql-connector-java</artifactId>
+	</dependency>
+	
+	<!-- DataSource -->
+	<dependency>
+	    <groupId>com.zaxxer</groupId>
+	    <artifactId>HikariCP</artifactId>
+	</dependency>
+
+     <!-- Spring -->
+     <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-aspects</artifactId>
+     </dependency>
+     <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-context-support</artifactId>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-entitymanager</artifactId>
+	</dependency>
+
+	<dependency>
+	    <groupId>org.springframework.data</groupId>
+	    <artifactId>spring-data-jpa</artifactId>
+	</dependency>
+	 
+     <!-- Logging -->
+     <dependency>
+         <groupId>org.slf4j</groupId>
+         <artifactId>slf4j-api</artifactId>
+     </dependency>
+     <dependency>
+         <groupId>log4j</groupId>
+         <artifactId>log4j</artifactId>
+     </dependency>
+     <dependency>
+         <groupId>org.slf4j</groupId>
+         <artifactId>slf4j-log4j12</artifactId>
+	</dependency>	
+	
+	<!-- Test -->
+	<dependency>
+	    <groupId>org.assertj</groupId>
+	    <artifactId>assertj-core</artifactId>
+	    <version>3.2.0</version>
+	    <scope>test</scope>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-test</artifactId>
+	    <scope>test</scope>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.dbunit</groupId>
+	    <artifactId>dbunit</artifactId>
+	    <version>2.5.1</version>
+	    <scope>test</scope>
+	    <exclusions>
+	        <exclusion>
+	            <artifactId>junit</artifactId>
+	            <groupId>junit</groupId>
+	        </exclusion>
+	    </exclusions>
+	</dependency>
+	
+	<dependency>
+	    <groupId>com.github.springtestdbunit</groupId>
+	    <artifactId>spring-test-dbunit</artifactId>
+	    <version>1.2.1</version>
+	    <scope>test</scope>
+	</dependency>	
+		
   </dependencies>
 </project>
