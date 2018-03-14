@@ -1,0 +1,25 @@
+#surefire
+#Wed Mar 14 21:43:13 CET 2018
+testClassesDirectory=C\:\\workspace\\sampdb\\sampdb-shared\\target\\test-classes
+classPathUrl.3=C\:\\Users\\usuario\\.m2\\repository\\org\\hamcrest\\hamcrest-core\\1.3\\hamcrest-core-1.3.jar
+classPathUrl.2=C\:\\Users\\usuario\\.m2\\repository\\junit\\junit\\4.12\\junit-4.12.jar
+useManifestOnlyJar=true
+classPathUrl.1=C\:\\workspace\\sampdb\\sampdb-shared\\target\\classes
+reportsDirectory=C\:\\workspace\\sampdb\\sampdb-shared\\target\\surefire-reports
+classPathUrl.0=C\:\\workspace\\sampdb\\sampdb-shared\\target\\test-classes
+providerConfiguration=org.apache.maven.surefire.junit4.JUnit4Provider
+testSuiteDefinitionTestSourceDirectory=C\:\\workspace\\sampdb\\sampdb-shared\\src\\test\\java
+surefireClassPathUrl.1=C\:\\Users\\usuario\\.m2\\repository\\org\\apache\\maven\\surefire\\surefire-api\\2.12.4\\surefire-api-2.12.4.jar
+surefireClassPathUrl.0=C\:\\Users\\usuario\\.m2\\repository\\org\\apache\\maven\\surefire\\surefire-junit4\\2.12.4\\surefire-junit4-2.12.4.jar
+runOrder=filesystem
+useSystemClassLoader=true
+excludes0=**/*$*
+isTrimStackTrace=true
+tc.0=org.sampdb.shared.AppTest
+enableAssertions=true
+includes2=**/*TestCase.java
+failIfNoTests=false
+includes1=**/*Test.java
+runStatisticsFile=C\:\\workspace\\sampdb\\sampdb-shared\\.surefire-2FD85035B1F64AEDA3F6B3920EEA3372115BA416
+includes0=**/Test*.java
+childDelegation=false

@@ -1,0 +1,3 @@
+org\sampdb\service\config\ServicesConfig.class
+org\sampdb\service\impl\ConsultaPresidentServiceImpl.class
+org\sampdb\service\ConsultaPresidentService.class

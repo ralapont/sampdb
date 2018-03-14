@@ -1,0 +1,5 @@
+org\sampdb\modeljpa\repository\ITGradeEventRepository.class
+org\sampdb\modeljpa\repository\ITMemberRepository.class
+org\sampdb\modeljpa\repository\ITPresidentRepository.class
+org\sampdb\modeljpa\repository\ITPruebaRepository.class
+org\sampdb\modeljpa\repository\ITStudentRepository.class
