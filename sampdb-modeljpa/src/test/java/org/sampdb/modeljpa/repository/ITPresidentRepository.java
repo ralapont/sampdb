@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -40,8 +41,8 @@ public class ITPresidentRepository {
 
     @Test
     public void savePictureForPresidentTest() {
-		President pesident = repository.findOne(new Integer(2));
-		assertEquals(pesident.getLastName().toLowerCase(), "adams");
+		Optional<President> pesident = repository.findById(new Integer(2));
+		assertEquals(pesident.get().getLastName().toLowerCase(), "adams");
 		
 		ObtenerArrayBytes obtenerArrayBytes = new ObtenerArrayBytes();
 		byte[] image = obtenerArrayBytes.obtenerBlob("C:\\Users\\usuario\\Pictures\\presidents\\adams.jpg");
@@ -50,8 +51,8 @@ public class ITPresidentRepository {
 	    
 	    Picture newPicture = pictureRepository.save(picture);
 	    
-	    pesident.setPicture(newPicture);
-	    repository.save(pesident);
+	    pesident.get().setPicture(newPicture);
+	    repository.save(pesident.get());
 	    assertNotNull(newPicture.getPictId());
 	    
     }    

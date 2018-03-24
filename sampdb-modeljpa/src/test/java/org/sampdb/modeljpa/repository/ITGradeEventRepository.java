@@ -3,6 +3,7 @@ package org.sampdb.modeljpa.repository;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -36,8 +37,8 @@ public class ITGradeEventRepository {
     
     @Test
     public void obtenerScoreEventTest() {
-    	GradeEvent gradeEvent = repository.findOne(new Integer(3));
-        List<Score> scores = gradeEvent.getScores();
+    	Optional<GradeEvent> gradeEvent = repository.findById(new Integer(3));
+        List<Score> scores = gradeEvent.get().getScores();
         assertThat(scores).hasSize(31);
     }
 

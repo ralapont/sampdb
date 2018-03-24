@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertNull;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -37,8 +38,8 @@ public class ITMemberRepository {
 
     @Test
     public void obtenerPassMemberTest() {
-    	Member member = repository.findOne(new Integer(1));
-		MemberPass pass = member.getMemberPass();
+    	Optional<Member> member = repository.findById(new Integer(1));
+		MemberPass pass = member.get().getMemberPass();
 		assertNull(pass);
     }    
 }

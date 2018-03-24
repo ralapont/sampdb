@@ -6,6 +6,7 @@ import static org.junit.Assert.assertEquals;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -37,20 +38,20 @@ public class ITStudentRepository {
 		List<Student> students = (List<Student>) repository.findAll();
         assertThat(students).hasSize(31);
         
-        Student student = repository.findOne(new Integer(1));
-        assertEquals(student.getSex().getCode(), "Female");
+        Optional<Student> student = repository.findById(new Integer(1));
+        assertEquals(student.get().getSex().getCode(), "Female");
     }
     
     @Test
     public void obtenerSexStudentTest() {
-        Student student = repository.findOne(new Integer(1));
-        assertEquals(student.getSex().getCode(), "Female");
+        Optional<Student> student = repository.findById(new Integer(1));
+        assertEquals(student.get().getSex().getCode(), "Female");
     }    
 
     @Test
     public void obtenerAbsenceStudentTest() {
-        Student student = repository.findOne(new Integer(10));
-        List<Absence> absences = student.getAbsences();
+        Optional<Student> student = repository.findById(new Integer(10));
+        List<Absence> absences = student.get().getAbsences();
         assertThat(absences).hasSize(2);
 
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
@@ -68,8 +69,8 @@ public class ITStudentRepository {
 
     @Test
     public void obtenerScoresStudentTest() {
-        Student student = repository.findOne(new Integer(10));
-        List<Score> scores = student.getScores();
+        Optional<Student> student = repository.findById(new Integer(10));
+        List<Score> scores = student.get().getScores();
         assertThat(scores).hasSize(6);
         
         System.out.println("==================================================================");

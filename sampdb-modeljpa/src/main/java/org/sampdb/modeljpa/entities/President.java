@@ -40,7 +40,7 @@ public class President implements Serializable {
 	@Column(name="city")
 	private String city;
 	
-	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.PERSIST)
+	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
 	@JoinColumn(name="state_code")
 	private Estado estado;
 	

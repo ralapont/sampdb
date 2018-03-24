@@ -8,7 +8,7 @@ public class SampdbWebAppInitializer extends AbstractAnnotationConfigDispatcherS
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class[] { ServicesConfig.class, JPAConfig.class };
+		return new Class[] { RootConfig.class, ServicesConfig.class, JPAConfig.class };
 	}
 
 	@Override

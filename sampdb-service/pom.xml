@@ -9,53 +9,103 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   
-  <groupId>com.rafael</groupId>
   <artifactId>sampdb-service</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <name>sampdb-service</name>
   <url>http://maven.apache.org</url>
   
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+	 <properties>
+		<java.version>1.8</java.version>
+	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	    <spring.version>5.0.4.RELEASE</spring.version>
+	    <jackson.version>2.9.4</jackson.version>
+	 </properties>
 
-    <dependencyManagement>
-       <dependencies>
-           <dependency>
-               <groupId>io.spring.platform</groupId>
-               <artifactId>platform-bom</artifactId>
-               <version>1.1.2.RELEASE</version>
-               <type>pom</type>
-               <scope>import</scope>
-           </dependency>
-       </dependencies>
-	</dependencyManagement>
-	  
   <dependencies>
 	<dependency>
 	    <groupId>junit</groupId>
 	    <artifactId>junit</artifactId>
+	    <version>4.12</version>
 	    <scope>test</scope>
 	</dependency>
+	
 	<dependency>
 		<groupId>com.rafael</groupId>
 		<artifactId>sampdb-modeljpa</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</dependency>
+
+    <!-- dozer library -->
+    <dependency>
+        <groupId>net.sf.dozer</groupId>
+        <artifactId>dozer</artifactId>
+        <version>5.5.1</version>
+    </dependency>
+
+    <!-- dozer-spring library -->
+
+    <dependency>
+        <groupId>net.sf.dozer</groupId>
+        <artifactId>dozer-spring</artifactId>
+        <version>5.5.1</version>
+    </dependency>
+
+	<!-- JSON -->
 	
 	<!-- Test -->
 	<dependency>
 	    <groupId>org.assertj</groupId>
 	    <artifactId>assertj-core</artifactId>
-	    <version>3.2.0</version>
+	     <version>3.9.1</version>
 	    <scope>test</scope>
 	</dependency>
 	
 	<dependency>
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-test</artifactId>
+         <version>${spring.version}</version>
 	    <scope>test</scope>
 	</dependency>
 	
+	<dependency>
+	    <groupId>org.dbunit</groupId>
+	    <artifactId>dbunit</artifactId>
+	    <version>2.5.1</version>
+	    <scope>test</scope>
+	    <exclusions>
+	        <exclusion>
+	            <artifactId>junit</artifactId>
+	            <groupId>junit</groupId>
+	        </exclusion>
+	    </exclusions>
+	</dependency>
+	
+	<dependency>
+	    <groupId>com.github.springtestdbunit</groupId>
+	    <artifactId>spring-test-dbunit</artifactId>
+	    <version>1.2.1</version>
+	    <scope>test</scope>
+	</dependency>
+
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-databind</artifactId>
+		<version>${jackson.version}</version>
+	</dependency>
   </dependencies>
+  
+	<build>
+		<finalName>sampdb-service</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.0.2</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+  
  </project>

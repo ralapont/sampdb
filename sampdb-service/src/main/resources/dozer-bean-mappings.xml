@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd">
+ 
+	<configuration>
+	   <date-format>dd-MM-yyyy</date-format>
+	</configuration> 
+ 
+   <mapping map-id="president">
+     <class-a>org.sampdb.modeljpa.entities.President</class-a>
+     <class-b>org.sampdb.service.dtos.PresidentDto</class-b>
+     <field>
+         <a>estado.stateCode</a>
+         <b>stateCode</b>
+     </field>
+     <field>
+         <a>estado.stateDesc</a>
+         <b>stateDesc</b>
+     </field>
+     <field >
+         <a>birth</a>
+         <b>birth</b>
+     </field>
+     <field >
+         <a>death</a>
+         <b>death</b>
+     </field>
+ </mapping>
+</mappings>
